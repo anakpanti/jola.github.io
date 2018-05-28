@@ -1,72 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Demo Embed Youtube Video With URL Only</title>
-<style>
-body, html {
-  margin: 0;
-  padding: 0;
-}
-h1 {
-  margin: 0 auto 50px;
-  font-weight: bold;
-  font-size:24px;
-}
-.videoyoutube{
-    margin:20px auto;
-    width:100%;
-}
-.video-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-.video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border:0;
-}
-.center{
-  width: 600px;
-  height: auto;
-  position: fixed;
-  top: 100px;
-  left: calc(50% - 300px);
-  text-align: center;
-}
+<title>Untitled Document</title>
+
+<style type="text/css">
+/*CSS Multi Tab Video by Blog Mas Tamvan*/
+#multitab-video{position:relative;box-sizing:border-box;margin:0 auto;line-height:2em;font-size:15px!important;width:100%}
+#multitab-video #movie-player{position:relative;padding-bottom:56.25%;padding-top:1.66666666666667em;height:0}
+#multitab-video #movie-player iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+#multitab-video #server-list{position:relative;background:#fafafa;display:block}
+#multitab-video #server-list .server-item:before{content:attr(title);width:9.93333333333333em;display:inline-block;padding-left:0.933333333333333em}
+.server-item{border-bottom:1px solid #c8c8cb}
+#multitab-video #server-list a{color:#334;text-decoration:none;border:1px solid #443;padding:0.333333333333333em 0.666666666666667em;display:inline-block;margin:0.333333333333333em;box-sizing:border-box}
+a:active{background-color:yellow}
 </style>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
-<div class="center">
-<h1>Demo Embed Youtube Video With URL Only</h1>
-<div>
-https://www.youtube.com/watch?v=j01I9Y8EyoQ
+
+<div id='multitab-video'>
+    <div id="movie-player">
+        <iframe src="EMBED URL VIDEO" frameborder="0" webkitAllowFullScreen="" mozallowfullscreen="" allowFullScreen="" name="search_iframe"></iframe>
+    </div>
+    <div id="server-list">
+        <div class="server-item" title="NAMA SERVER">
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">SD 360p</a>
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">SD 480p</a>
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">HD 720p</a>
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">HD 1080p</a>
+        </div>
+        <div class="server-item" title="NAMA SERVER">
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">SD 360p</a>
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">SD 480p</a>
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">HD 720p</a>
+            <a href="https://www.youtube.com/watch?v=78ok_I-8wU0" target="search_iframe">HD 1080p</a>
+        </div>
+    </div>
 </div>
-</div>
-<script>
-var videoEmbed = {
-    invoke: function(){    
-        $('.center').html(function(i, html) {
-            return videoEmbed.convertMedia(html);
-        });   
-    },
-    convertMedia: function(html){
-          var pattern = /(?:http?s?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g;     
-        if(pattern.test(html)){
-              var replacement = '<div class="videoyoutube"><div class="video-responsive"><iframe height="281" width="500" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe></div></div>';
-              var html = html.replace(pattern, replacement);
-        }
-         return html;
-    }
-}
-setTimeout(function(){
-    videoEmbed.invoke();
-},800);
-</script>
 </body>
 </html>
