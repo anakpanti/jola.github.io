@@ -1,0 +1,39 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>amp-lightbox</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+  <!-- Import the amp-lightbox component in the header -->
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async='async' custom-element='amp-youtube' src='https://cdn.ampproject.org/v0/amp-youtube-0.1.js'></script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <style amp-custom>
+.video-box,.video-img{width:100%;margin:0 auto;text-align:center}
+.lightbox-video{background:rgba(0,0,0,.8);width:100%;height:100%;position:absolute;display:flex;align-items:center;justify-content:center}
+.video-box{max-width:800px}
+.video-img{max-width:600px;position:relative}
+.playonimage{cursor:pointer;margin:auto;width:56px;height:56px;-webkit-border-radius:50%;border-radius:50%;background-color:rgba(0,0,0,.2);background-image:url(https://4.bp.blogspot.com/-aCqXY9Vnj9g/Wq56xpEfJJI/AAAAAAAAwjA/PqM1-3XTgnoF7Bif_Ma2NybxuCupptkYACLcBGAs/s1600/play_circle_filled_white_48dp.png);background-position:center;-webkit-background-size:48px 48px;background-size:48px 48px;position:absolute;top:0;bottom:0;left:0;right:0;z-index:1}
+  </style>
+</head>
+<body>
+<br />
+<br />
+
+<amp-lightbox id="open-video" layout="nodisplay">
+<div class="lightbox-video" on="tap:open-video.close,btn-play.show,btn-play2.show" role="button" tabindex="0" aria-label="Close Video">
+<div class="video-box">
+<amp-youtube id="video" data-videoid="Eng0tMkA6Y8" height="270" layout="responsive" width="480" data-param-rel="0" hidden></amp-youtube>
+</div>
+</div>
+</amp-lightbox>
+<div class="video-img" id="btn-play" on="tap:video.show, video.play, btn-play.hide,open-video" role="button" tabindex="0" aria-label="Play Video">
+<amp-img alt="Video" src="https://i.ytimg.com/vi_webp/Eng0tMkA6Y8/maxresdefault.webp" width="637" height="356" layout="responsive"><amp-img fallback alt="Video" src="https://i.ytimg.com/vi/Eng0tMkA6Y8/maxresdefault.jpg" width="637" height="356" layout="responsive"></amp-img></amp-img>
+<div class="playonimage"></div>
+</div>
+
+
+</body>
+</html>
